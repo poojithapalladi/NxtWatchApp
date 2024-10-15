@@ -21,4 +21,5 @@ export const ContactUsContainer = styled.div`
 export const Text = styled.p`
   font-weight: 600;
   color: ${props => (props.theme === 'dark' ? '#f4f4f4' : '#212121')};
+  text-decoration: none;
 `

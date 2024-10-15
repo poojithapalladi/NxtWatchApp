@@ -2,6 +2,8 @@ import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
+import ThemeContext from '../../context/ThemeContext'
+
 import {
   LoginContainer,
   LoginCardContainer,
@@ -76,45 +78,63 @@ class LoginRoute extends Component {
     }
 
     return (
-      <LoginContainer>
-        <LoginCardContainer>
-          <WebsiteLogo
-            src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-            alt="website logo"
-          />
-          <Form onSubmit={this.onSubmit}>
-            <Label htmlFor="username">USERNAME</Label>
-            <LoginInput
-              type="text"
-              id="username"
-              placeholder="Username"
-              value={username}
-              onChange={this.updateUsername}
-            />
-            <Label htmlFor="password">PASSWORD</Label>
-            <LoginInput
-              type={passwordType}
-              id="password"
-              placeholder="Password"
-              value={password}
-              onChange={this.updatePassword}
-            />
-            <input
-              type="checkbox"
-              id="showPassword"
-              onClick={this.onCheckBox}
-            />
-            <ShowPasswordLabel htmlFor="showPassword">
-              Show Password
-            </ShowPasswordLabel>
-            <div>
-              <LoginButton type="submit">Login</LoginButton>
-            </div>
-            <ErrorMsg>{isError && `* ${errorMsg}`}</ErrorMsg>
-          </Form>
-        </LoginCardContainer>
-      </LoginContainer>
+      <ThemeContext.Consumer>
+        {value => {
+          const {isDarkTheme} = value
+
+          const websiteLogo = isDarkTheme
+            ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
+            : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
+
+          const theme = isDarkTheme ? 'dark' : 'light'
+
+          return (
+            <LoginContainer theme={theme}>
+              <LoginCardContainer theme={theme}>
+                <WebsiteLogo src={websiteLogo} alt="website logo" />
+                <Form onSubmit={this.onSubmit}>
+                  <Label htmlFor="username" theme={theme}>
+                    USERNAME
+                  </Label>
+                  <LoginInput
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                    theme={theme}
+                    value={username}
+                    onChange={this.updateUsername}
+                  />
+                  <Label htmlFor="password" theme={theme}>
+                    PASSWORD
+                  </Label>
+                  <LoginInput
+                    type={passwordType}
+                    id="password"
+                    placeholder="Password"
+                    theme={theme}
+                    value={password}
+                    onChange={this.updatePassword}
+                  />
+                  <input
+                    type="checkbox"
+                    id="showPassword"
+                    onClick={this.onCheckBox}
+                  />
+                  <ShowPasswordLabel theme={theme} htmlFor="showPassword">
+                    Show Password
+                  </ShowPasswordLabel>
+                  <div>
+                    <LoginButton type="submit">Login</LoginButton>
+                  </div>
+                  <ErrorMsg>{isError && `* ${errorMsg}`}</ErrorMsg>
+                </Form>
+              </LoginCardContainer>
+            </LoginContainer>
+          )
+        }}
+      </ThemeContext.Consumer>
     )
   }
 }
+
 export default LoginRoute

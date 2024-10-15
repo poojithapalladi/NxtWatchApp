@@ -46,6 +46,7 @@ export const BannerLogo = styled.img`
 export const BannerText = styled.p`
   font-family: Roboto;
   font-size: 20px;
+  text-decoration: none;
 `
 
 export const GetItButton = styled.button`
@@ -56,11 +57,13 @@ export const GetItButton = styled.button`
   height: 40px;
   font-weight: 700;
   font-family: Roboto;
+  text-decoration: none;
 `
 export const CloseButton = styled.button`
   background-color: transparent;
   border: none;
   align-self: flex-end;
+  text-decoration: none;
 `
 
 export const SearchInput = styled.input`
@@ -95,6 +98,7 @@ export const VideosList = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  list-style-type: none;
 `
 
 export const LoaderContainer = styled.div`
@@ -122,6 +126,7 @@ export const FailureText = styled.h1`
   margin: 0px;
   padding: 5px;
   color: ${props => (props.theme === 'dark' ? '#f9f9f9' : '#181818')};
+  text-decoration: none;
 `
 export const RetryButton = styled.button`
   background-color: #4f46e5;
@@ -131,6 +136,7 @@ export const RetryButton = styled.button`
   height: 30px;
   margin-top: 10px;
   border-radius: 5px;
+  text-decoration: none;
 `
 
 export const NoVideosContainer = styled(FailureContainer)``
