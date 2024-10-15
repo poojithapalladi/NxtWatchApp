@@ -1,10 +1,10 @@
-import {Component} from 'react'
+ import {Component} from 'react'
 
 import {IoMdClose} from 'react-icons/io'
 import {BsSearch} from 'react-icons/bs'
 
 import Cookies from 'js-cookie'
-import {Loader} from 'react-loader-spinner'
+import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import HomeBody from '../HomeBody'
