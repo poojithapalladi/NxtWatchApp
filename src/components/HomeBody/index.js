@@ -10,6 +10,7 @@ import {
   ChannelLogo,
   ThumbnailText,
   VideoTitle,
+  HomeLink,
   VideoTextContainer,
   VideoDetailsContainer,
   VideoDetailsContainer2,
@@ -47,9 +48,9 @@ const VideoCard = props => {
           const {changeActiveMenu} = val
           return (
             <VideoCardContainer as="li">
-              <Link
+              <HomeLink
+                as={Link}
                 to={`/videos/${id}`}
-                className="link"
                 onClick={() => changeActiveMenu('INITIAL')}
               >
                 <Thumbnail src={thumbnailUrl} alt="video thumbnail" />
@@ -68,7 +69,7 @@ const VideoCard = props => {
                     </VideoDetailsContainer>
                   </VideoTextContainer>
                 </ThumbnailText>
-              </Link>
+              </HomeLink>
             </VideoCardContainer>
           )
         }}

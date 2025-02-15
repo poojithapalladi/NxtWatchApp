@@ -59,6 +59,7 @@ export const VideoItemDetailsContainer = styled.div`
   padding-bottom: 30px;
   @media screen and (max-width: 768px) {
     min-height: 90vh;
+    text-decoration: none;
   }
 `
 

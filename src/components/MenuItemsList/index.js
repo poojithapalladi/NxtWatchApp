@@ -89,27 +89,27 @@ const MenuItemsList = () => {
                 </MenuLink>
               </Link>
 
-              <Link to="/saved-videos" className="link">
-                <MenuLink
-                  theme={theme}
-                  isActive={activeMenu === activeMenuConstants.savedVideos}
-                  onClick={() =>
-                    changeActiveMenu(activeMenuConstants.savedVideos)
+              <MenuLink
+                theme={theme}
+                as={Link}
+                to="/saved-videos"
+                isActive={activeMenu === activeMenuConstants.savedVideos}
+                onClick={() =>
+                  changeActiveMenu(activeMenuConstants.savedVideos)
+                }
+                key="SAVED_VIDEOS"
+              >
+                <RiMenuAddLine
+                  size={25}
+                  color={
+                    activeMenu === activeMenuConstants.savedVideos
+                      ? iconActive
+                      : iconColor
                   }
-                  key="SAVED_VIDEOS"
-                >
-                  <RiMenuAddLine
-                    size={25}
-                    color={
-                      activeMenu === activeMenuConstants.savedVideos
-                        ? iconActive
-                        : iconColor
-                    }
-                  />
+                />
 
-                  <MenuHeading theme={theme}>Saved videos</MenuHeading>
-                </MenuLink>
-              </Link>
+                <MenuHeading theme={theme}>Saved videos</MenuHeading>
+              </MenuLink>
             </MenuList>
           )
         }}

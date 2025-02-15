@@ -1,12 +1,9 @@
 import styled from 'styled-components'
 
-export const VideoCardContainer = styled.div`
+export const VideoCardContainer = styled.li`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: ${props =>
-    props.theme === 'dark' ? '#181818' : '#ffffff'};
-  color: ${props => (props.theme === 'dark' ? '#ffffff' : '#000000')};
   @media screen and (min-width: 576px) {
     padding: 5px;
     flex-direction: row;
@@ -72,8 +69,6 @@ export const VideoDetailsText = styled.p`
   margin-right: 8px;
   margin-bottom: 4px;
   color: #475569;
-  color: ${props => (props.theme === 'dark' ? '#b0b0b0' : '#606060')};
-
   text-decoration: none;
   &:active {
     text-decoration: none;
@@ -81,4 +76,16 @@ export const VideoDetailsText = styled.p`
   @media screen and (min-width: 567px) {
     margin-bottom: 0px;
   }
+`
+export const TrendingLink = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  background-color: ${props => {
+    const {theme} = props
+    const color = theme === 'dark' ? '#424242' : '#e2e8f0'
+    return props.isActive ? color : ''
+  }};
+  padding-left: 20px;
 `

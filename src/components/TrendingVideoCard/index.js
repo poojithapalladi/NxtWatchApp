@@ -9,6 +9,7 @@ import {
   ChannelLogo,
   ThumbnailText,
   VideoTitle,
+  TrendingLink,
   VideoTextContainer,
   VideoDetailsContainer,
   VideoDetailsContainer2,
@@ -43,9 +44,9 @@ const TrendingVideoCard = props => {
         {val => {
           const {changeActiveMenu} = val
           return (
-            <Link
+            <TrendingLink
+              as={Link}
               to={`/videos/${id}`}
-              className="link"
               onClick={() => changeActiveMenu('INITIAL')}
             >
               <VideoCardContainer>
@@ -66,7 +67,7 @@ const TrendingVideoCard = props => {
                   </VideoTextContainer>
                 </ThumbnailText>
               </VideoCardContainer>
-            </Link>
+            </TrendingLink>
           )
         }}
       </ActiveMenuContext.Consumer>

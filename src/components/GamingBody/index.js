@@ -11,6 +11,7 @@ import {
   VideoTextContainer,
   VideoDetailsContainer,
   VideoDetailsText,
+  GamingLink,
 } from './styledComponents'
 
 const GamingBody = props => {
@@ -27,9 +28,9 @@ const GamingBody = props => {
 
           return (
             <VideoCardContainer>
-              <Link
+              <GamingLink
+                as={Link}
                 to={`/videos/${id}`}
-                className="link"
                 onClick={() => changeActiveMenu('INITIAL')}
               >
                 <Thumbnail src={thumbnailUrl} alt="video thumbnail" />
@@ -43,7 +44,7 @@ const GamingBody = props => {
                     </VideoDetailsContainer>
                   </VideoTextContainer>
                 </ThumbnailText>
-              </Link>
+              </GamingLink>
             </VideoCardContainer>
           )
         }}

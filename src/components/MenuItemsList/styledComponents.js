@@ -26,7 +26,6 @@ export const MenuLink = styled.li`
 export const MenuHeading = styled.p`
   font-weight: 500;
   padding-left: 15px;
-  text-decoration: none;
   color: ${props => (props.theme === 'dark' ? '#f9f9f9' : '#0f0f0f')};
   font-family: Roboto;
   font-size: 16px;

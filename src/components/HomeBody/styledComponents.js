@@ -65,3 +65,15 @@ export const VideoDetailsText = styled.p`
     margin-bottom: 0px;
   }
 `
+export const HomeLink = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  background-color: ${props => {
+    const {theme} = props
+    const color = theme === 'dark' ? '#424242' : '#e2e8f0'
+    return props.isActive ? color : ''
+  }};
+  padding-left: 20px;
+`
